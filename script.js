@@ -141,18 +141,6 @@ serviceCardsHover.forEach(card => {
     });
 });
 
-// Add pulse animation to city markers on hover
-const cityMarkers = document.querySelectorAll('.city-marker');
-cityMarkers.forEach(marker => {
-    marker.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.5)';
-    });
-    
-    marker.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-    });
-});
-
 // Add interactive effect to contact cards
 const contactCards = document.querySelectorAll('.contact-card');
 contactCards.forEach(card => {
