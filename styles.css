@@ -458,15 +458,17 @@ section {
     grid-template-columns: 1fr;
     gap: 3rem;
     align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .about-text {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(30px);
 }
 
 .about-text.visible {
-    animation: slideInRight 0.8s ease forwards;
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 @keyframes slideInRight {
@@ -530,28 +532,6 @@ section {
     color: var(--text-light);
     margin: 0;
     font-size: 0.95rem;
-}
-
-.about-image {
-    opacity: 0;
-    transform: translateX(30px);
-}
-
-.about-image.visible {
-    animation: slideInLeft 0.8s ease forwards;
-}
-
-.image-placeholder {
-    background: var(--bg-light);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.image-placeholder svg {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 /* Services Section */
@@ -674,69 +654,13 @@ section {
     grid-template-columns: 1fr;
     gap: 3rem;
     align-items: center;
-}
-
-.coverage-map {
-    opacity: 0;
-    transform: scale(0.9);
-}
-
-.coverage-map.visible {
-    animation: scaleIn 0.8s ease forwards;
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.map-container {
-    background: var(--primary-color);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-}
-
-.alberta-shape {
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
-}
-
-.city-marker {
-    cursor: pointer;
-    transition: var(--transition);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0.8;
-    }
-}
-
-.route-line {
-    animation: dash 20s linear infinite;
-}
-
-@keyframes dash {
-    to {
-        stroke-dashoffset: 1000;
-    }
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .coverage-info {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateY(30px);
 }
 
 .coverage-info.visible {
@@ -840,10 +764,12 @@ section {
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     opacity: 0;
     transform: translateY(30px);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-info.visible {
@@ -1059,11 +985,6 @@ section {
         padding: 3rem 0;
     }
 
-    .about-content,
-    .coverage-content {
-        grid-template-columns: 1fr;
-    }
-
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -1079,13 +1000,7 @@ section {
 }
 
 @media (min-width: 769px) {
-    .about-content {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .coverage-content {
-        grid-template-columns: 1fr 1fr;
-    }
+    /* Layouts are already optimized */
 }
 
 /* Utility Classes */
